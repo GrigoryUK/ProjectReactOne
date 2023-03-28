@@ -8,7 +8,6 @@ export enum ValidateProfileError {
     NO_DATA = 'NO_DATA',
     SERVER_ERROR = 'SERVER_ERROR',
 }
-
 export interface ProfileSchema {
 
     data?: Profile
