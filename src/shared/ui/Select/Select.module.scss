@@ -1,0 +1,22 @@
+.Wrapper {
+  display: flex;
+  align-items: center;
+
+  select {
+    outline: none;
+    border: 1px solid var(--primary--text);
+    padding: 0.2em 0.5em 0.2em 0.2em;
+    color: var(--primary--text);
+    background: transparent;
+  }
+
+  option {
+    border: 1px solid var(--primary--text);
+    color: var(--primary--text);
+    background: var(--bg-primary-block);
+  }
+}
+
+.label {
+  margin-right: 0.5em;
+}

@@ -1,0 +1,10 @@
+.ArticleSortSelector {
+  display: flex;
+  align-items: center;
+
+  .select {
+    &:first-child {
+      margin-right: 1rem;
+    }
+  }
+}

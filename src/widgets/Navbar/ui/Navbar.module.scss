@@ -1,0 +1,59 @@
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  height: var(--navbar-height);
+  max-width: 100%;
+  background: var(--bg-primary-block);
+
+  .dropdown {
+    max-width: 300px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background: var(--bg-primary);
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    img {
+      margin-right: 1rem;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    border-radius: 5rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background: var(--bg-primary);
+  }
+
+  &__switcher {
+    display: flex;
+    align-items: center;
+
+    button {
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .left {
+    &__row {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

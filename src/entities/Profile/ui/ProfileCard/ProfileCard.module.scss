@@ -1,0 +1,62 @@
+.ProfileCard {
+  border: 1px solid var(--primary--text);
+  border-radius: 4px;
+  padding: 2em;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    width: 100%;
+
+    &__selects {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1em;
+
+      .select {
+        &:first-child {
+          margin-right: 1em;
+        }
+      }
+    }
+  }
+
+  .subtitle {
+    margin-right: 1em;
+    width: 10%;
+    min-width: 9em;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .avatar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+
+    &__text {
+      margin-right: 1em;
+      width: 10%;
+      min-width: 9em;
+    }
+  }
+}
+
+.editing {
+  background: var(--bg-primary-block-hover);
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

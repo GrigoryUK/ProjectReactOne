@@ -1,0 +1,52 @@
+.Loader {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+
+  div {
+    position: absolute;
+    border: 4px solid var(--bg-primary-loader);
+    border-radius: 50%;
+    opacity: 1;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+
+    &:last-child {
+      animation-delay: -0.5s;
+    }
+  }
+}
+
+@keyframes lds-ripple {
+  0% {
+    left: 36px;
+    top: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  4.9% {
+    left: 36px;
+    top: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  5% {
+    left: 36px;
+    top: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+
+  100% {
+    left: 0;
+    top: 0;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,51 @@
+.HListBox {
+  position: relative;
+  display: block;
+  min-width: 100px;
+
+  .selected {
+    border: 1px solid var(--primary--text);
+    border-radius: 4px;
+    padding: 8px 12px;
+    width: 100%;
+    color: var(--primary--link);
+    background: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .options {
+    position: absolute;
+    z-index: 10;
+    list-style: none;
+    margin: 0.5rem 0 0;
+    border: 1px solid var(--primary--text);
+    border-radius: 4px;
+    padding: 0;
+    width: 100%;
+    background: var(--bg-primary-block);
+    transition: all 0.4s ease;
+  }
+
+  .item {
+    padding: 0.2rem 0.5rem;
+    width: 100%;
+    cursor: pointer;
+
+    &.active {
+      background: var(--primary--text--normal);
+    }
+
+    &.disabled {
+      opacity: 0.6;
+    }
+  }
+
+  .optionsTop {
+    bottom: 110%;
+  }
+}

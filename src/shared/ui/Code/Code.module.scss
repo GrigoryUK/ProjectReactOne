@@ -1,0 +1,23 @@
+.Code {
+  position: relative;
+  overflow: auto;
+  border: 1px solid var(--primary--text);
+  border-radius: 4px;
+  padding: 20px;
+  background: var(--bg-primary-block);
+
+  &__copy {
+    position: absolute;
+    right: 2em;
+    top: 2em;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__icon {
+    min-width: 32px;
+    max-width: 32px;
+  }
+}

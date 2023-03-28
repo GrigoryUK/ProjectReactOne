@@ -1,0 +1,13 @@
+.AddCommentForm {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+
+  &__input {
+    margin-right: 1em;
+  }
+
+  &__btn {
+    padding: 15px 20px;
+  }
+}

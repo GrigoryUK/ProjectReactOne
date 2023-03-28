@@ -1,0 +1,13 @@
+.ThemeSwitcher {
+  margin-right: 16px;
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+  transition: all 0.4s ease;
+
+  svg {
+    max-width: 30px;
+    fill: #f3dd4a;
+    transform: scale(0.8);
+  }
+}

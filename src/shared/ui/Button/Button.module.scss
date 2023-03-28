@@ -1,0 +1,75 @@
+.Button {
+  color: var(--primary--link);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.clear {
+  outline: none;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+.outline {
+  border: 1px solid var(--primary--text);
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: var(--primary--text);
+  background: none;
+
+  &--error {
+    border: 1px solid var(--primary--text--error);
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: var(--primary1);
+    background: var(--primary--text--error);
+  }
+
+  &--success {
+    border: 1px solid var(--primary--text--success);
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: var(--primary1);
+    background: var(--primary--text--success);
+  }
+
+  &--normal {
+    border: 1px solid var(--primary--text--normal);
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: var(--primary1);
+    background: var(--primary--text--normal);
+  }
+}
+
+.collapse {
+  border: 1px solid var(--primary--text);
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  font-size: var(--font-size-l);
+  color: var(--primary--text);
+  background: var(--bg-primary);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.Button.size_m {
+  font-size: var(--font-size-m);
+}
+
+.Button.size_l {
+  font-size: var(--font-size-l);
+}
+
+.Button.size_x {
+  font-size: var(--font-size-x);
+}

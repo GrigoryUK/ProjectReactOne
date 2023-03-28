@@ -1,0 +1,55 @@
+.Input {
+  outline: none;
+  border: 1px solid var(--primary--text);
+  padding: 4px 12px;
+  width: 100%;
+  color: var(--primary--text);
+  transition: all 0.3s ease 0s;
+
+  &::placeholder {
+    opacity: 0.6;
+  }
+
+  &:focus {
+    &::placeholder {
+      opacity: 1;
+    }
+  }
+
+  &.primary {
+    outline: none;
+    border: 1px solid var(--primary--text);
+    border-radius: 4px;
+    padding: 12px;
+    height: auto;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: inherit;
+    text-rendering: optimizelegibility;
+    text-transform: unset;
+    color: var(--primary--text);
+    background: var(--bg-primary-input);
+  }
+
+  &.clear {
+    outline: none;
+    border: none;
+    background: transparent;
+  }
+
+  &.size_m {
+    font-size: var(--font-size-m);
+  }
+
+  &.size_l {
+    font-size: var(--font-size-l);
+  }
+
+  &.size_x {
+    font-size: var(--font-size-x);
+  }
+
+  &.readonly {
+    opacity: 0.9;
+  }
+}

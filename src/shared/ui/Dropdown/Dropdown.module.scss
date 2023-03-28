@@ -1,0 +1,35 @@
+.Dropdown {
+  .btn {
+    margin: 0;
+    border: none;
+    padding: 0;
+    background: none;
+  }
+
+  .items {
+    position: absolute;
+    z-index: 10;
+    list-style: none;
+    overflow: hidden;
+    margin: 0.5rem 0 0;
+    border: var(--primary--text);
+    border-radius: 8px;
+    padding: 0;
+    background: var(--bg-primary);
+  }
+
+  .item {
+    outline: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    color: var(--primary--text);
+    background: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--primary--text--normal);
+    }
+  }
+}

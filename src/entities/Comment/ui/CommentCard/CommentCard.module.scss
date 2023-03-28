@@ -1,0 +1,21 @@
+.CommentCard {
+  border: 1px solid var(--primary--text);
+  border-radius: 4px;
+  padding: 16px;
+  width: 100%;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__avatar {
+    margin-right: 0.5rem;
+  }
+}
+
+.loading {
+  margin-bottom: 1em;
+  border: none;
+}

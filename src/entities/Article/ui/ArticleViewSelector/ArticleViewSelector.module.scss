@@ -1,0 +1,20 @@
+.ArticleViewSelector {
+  button {
+    &:first-child {
+      margin-right: 1rem;
+    }
+  }
+
+  &__icon {
+    min-width: 32px;
+    max-width: 32px;
+    fill: var(--primary--text);
+    transition: all 0.3s ease;
+  }
+}
+
+.notSelected {
+  svg {
+    fill: var(--primary--text--normal);
+  }
+}
