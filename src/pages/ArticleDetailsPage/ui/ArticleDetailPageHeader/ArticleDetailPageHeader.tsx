@@ -12,7 +12,7 @@ import { getArticleDetailsData } from 'entities/Article'
 interface ArticleDetailPageHeaderProps {
     className?: string;
 }
- 
+
 export const ArticleDetailPageHeader = memo((props: ArticleDetailPageHeaderProps) => {
   const {
     className

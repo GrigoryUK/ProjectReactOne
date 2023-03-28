@@ -1,4 +1,4 @@
-export { ArticleSortField, ArticleView, ArticleType} from './model/consts/consts'
+export { ArticleSortField, ArticleView, ArticleType } from './model/consts/consts'
 export { getArticleDetailsData } from './model/selectors/articleDetails'
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs'
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector'

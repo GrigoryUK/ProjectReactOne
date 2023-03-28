@@ -5,7 +5,6 @@ import { ArticleList } from './ArticleList'
 import { Article } from '../../model/types/article'
 import { ArticleView } from '../../model/consts/consts'
 
-
 export default {
   title: 'entities/Article/ArticleList',
   component: ArticleList,

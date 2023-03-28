@@ -3,17 +3,9 @@ import cls from './ArticleInfiniteList.module.scss'
 import { useTranslation } from 'react-i18next'
 import { memo } from 'react'
 import { useSelector } from 'react-redux'
-import {
-  getArticlesPageError,
-  getArticlesPageIsLoading,
-  getArticlesPageView
-} from '../../model/selectors/articlesPageSelectors'
-import { useSearchParams } from 'react-router-dom'
+import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPageSelectors'
 import { ArticleList } from 'entities/Article'
 import { getArticles } from '../../model/slices/articlesPageSlice'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 interface ArticleInfiniteListProps {
     className?: string;
