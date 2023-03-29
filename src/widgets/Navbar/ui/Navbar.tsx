@@ -6,16 +6,11 @@ import { LangSwitcher } from 'widgets/LangSwitcher'
 import { useTranslation } from 'react-i18next'
 import { LoginModal } from 'features/AuthByUserName'
 import { useSelector } from 'react-redux'
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { getUserAuthData } from 'entities/User'
 import { Profile } from 'entities/Profile'
-import { Text } from 'shared/ui/Text/Text'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown'
-import { HStack } from 'shared/ui/Stack'
 import { NotificationButton } from 'features/notificationButton'
 import { AvatarDropdown } from 'features/avatarDropdown'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 
 interface NavbarProps {
     data?: Profile
@@ -52,6 +47,9 @@ export const Navbar = memo(({ className, data }: NavbarProps) => {
                 {t('Logo')}
             </div>
             <div className={cls.Navbar__switcher}>
+                <Button className={cls.btn__sing} theme={ButtonTheme.OUTLINE_NORMAL} onClick={onCloseModal}>
+                {t('sign in')}
+                </Button>
                 <LoginModal isOpen={isAuthModal} onClose={onCloseModal}/>
                 <ThemeSwitcher />
                 <LangSwitcher />

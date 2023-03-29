@@ -5,6 +5,9 @@
   top: 0;
   bottom: 0;
   z-index: var(--modal-z-index);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--primary--text);
   opacity: 0;
   visibility: hidden;
@@ -27,7 +30,7 @@
     border-radius: 12px;
     padding: 20px;
     width: 30%;
-    max-width: 40%;
+    max-width: 400px;
     background: var(--bg-primary-block);
     transform: scale(0.5);
     transition: all 0.3s ease;

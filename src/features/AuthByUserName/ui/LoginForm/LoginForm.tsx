@@ -54,7 +54,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
            removeAfterUnmount
            reducers={initialReducers}>
            <div className={classNames(cls.LoginForm, {}, [className])}>
-               <Text title={t('Authorization form')}/>
+               <Text className={cls.title} title={t('Authorization form')}/>
                {error && <Text className={cls.LoginForm__error} theme={TextTheme.ERROR}
                                text={t('Password or login is incorrect')}/>}
                <Input
