@@ -19,8 +19,9 @@ export function RequireAuth ({ children, roles }: RequireAuthProps) {
     if (!roles) {
       return true
     }
-    return roles.some(requireRole => {
-      return userRoles?.includes(requireRole)
+
+    return roles.some((requiredRole) => {
+      return userRoles?.includes(requiredRole)
     })
   }, [roles, userRoles])
 
@@ -31,6 +32,6 @@ export function RequireAuth ({ children, roles }: RequireAuthProps) {
   if (!hasRequiredRoles) {
     return <Navigate to={RoutePath.forbidden} state={{ from: location }} replace />
   }
-
+  console.log(children)
   return children
 }

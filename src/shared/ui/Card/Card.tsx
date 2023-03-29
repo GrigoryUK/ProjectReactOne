@@ -6,7 +6,8 @@ import { HTMLAttributes, memo, ReactNode } from 'react'
 export enum CardTheme {
     PRIMARY = 'primary',
     OUTLINED = 'outlined',
-    OUTLINED_ACTIVE = 'outlined-active'
+    OUTLINED_ACTIVE = 'outlined-active',
+    OUTLINED_MESSAGE = 'outlined-message'
 
 }
 

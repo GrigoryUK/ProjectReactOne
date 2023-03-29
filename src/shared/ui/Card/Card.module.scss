@@ -23,4 +23,14 @@
     color: var(--primary--text);
     background: var(--bg-primary-block);
   }
+
+  &.outlined-message {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: var(--bg-primary);
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 }

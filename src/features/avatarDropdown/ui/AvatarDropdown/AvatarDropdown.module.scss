@@ -1,0 +1,22 @@
+.AvatarDropdown {
+
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  background: var(--bg-primary);
+  transition: all 0.4s ease;
+  cursor: pointer;
+
+  img {
+    margin-right: 1rem;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

@@ -38,7 +38,7 @@ module.exports = {
     'ug-fsd-plugin/path-checker': 2,
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'as', 'enter',
+      ignoreAttribute: ['data-testid', 'border', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'as', 'enter',
         'enterFrom',
         'enterTo',
         'leave',
