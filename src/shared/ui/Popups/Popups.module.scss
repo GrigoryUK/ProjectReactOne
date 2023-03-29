@@ -1,12 +1,14 @@
 .Popups {
   position: relative;
+
   .trigger {
-    background: none;
-    outline: none;
     margin: 0;
-    padding: 0;
+    outline: none;
     border: none;
+    padding: 0;
+    background: none;
     cursor: pointer;
+
     &:hover {
       opacity: 0.9;
     }
@@ -18,25 +20,24 @@
     border: 1px solid var(--primary--text);
     border-radius: 4px;
     padding: 0.5rem 0.8rem;
+    width: max-content;
     background: var(--bg-primary-block);
     transition: all 0.4s ease;
-    width: max-content;
   }
 
-
   .optionsBottomLeft {
-    top: 100%;
     left: 0;
+    top: 100%;
   }
 
   .optionsBottomRight {
-    top: 100%;
     right: 0;
+    top: 100%;
   }
 
   .optionsTopRight {
-    bottom: 100%;
     left: 0;
+    bottom: 100%;
   }
 
   .optionsTopLeft {

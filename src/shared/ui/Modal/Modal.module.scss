@@ -23,7 +23,7 @@
     background: var(--primary4);
   }
 
-  &__content {
+  .content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,7 +43,13 @@
   visibility: visible;
   pointer-events: auto;
 
-  .Modal__content {
+  .content {
     transform: scale(1);
+  }
+}
+
+.isClosing {
+  .content {
+    transform: scale(0.5);
   }
 }

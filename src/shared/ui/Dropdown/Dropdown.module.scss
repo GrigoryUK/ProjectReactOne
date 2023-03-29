@@ -9,6 +9,8 @@
   .items {
     position: absolute;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
     list-style: none;
     overflow: hidden;
     margin: 0.5rem 0 0;
@@ -17,19 +19,17 @@
     padding: 0;
     width: max-content;
     background: var(--bg-primary);
-    display: flex;
-    flex-direction: column;
   }
 
   .item {
     outline: none;
     border: none;
     padding: 0.5rem 1rem;
+    width: 100%;
     color: var(--primary--text);
     background: none;
     transition: all 0.2s ease;
     cursor: pointer;
-    width: 100%;
 
     &:hover {
       background: var(--primary--text--normal);

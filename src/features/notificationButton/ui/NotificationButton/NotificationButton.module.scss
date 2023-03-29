@@ -1,13 +1,12 @@
 .NotificationButton {
-
   .notification {
     display: flex;
     align-items: center;
     justify-content: center;
+
     svg {
       min-width: 30px;
       max-width: 30px;
-
     }
   }
 }

@@ -1,8 +1,9 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import cls from './Modal.module.scss'
-import React, { ReactNode, useCallback, useEffect, useState } from 'react'
+import React, { ReactNode } from 'react'
 import { Portal } from '../Portal/Portal'
 import { Overlay } from '../Overlay/Overlay'
+import { useModal } from 'shared/lib/hooks/useModal/useModal'
 
 interface ModalProps {
     className?: string;
@@ -13,53 +14,38 @@ interface ModalProps {
     lazy?: boolean;
 }
 
+const ANIMATION_DELAY = 300
 export const Modal = (props: ModalProps) => {
   const { className, children, isOpen, onClose, lazy } = props
-  const [isMounted, setIsMounted] = useState(false)
-
-  const onCloseHandler = useCallback(() => {
-    if (onClose) {
-      onClose()
-    }
-  }, [onClose])
-
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      onCloseHandler()
-    }
-  }, [onCloseHandler])
-
-  const onContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation()
-  }
-
-  useEffect(() => {
-    if (isOpen) {
-      window.addEventListener('keydown', onKeyDown)
-      setIsMounted(true)
-    }
-
-    return () => {
-      window.removeEventListener('keydown', onKeyDown)
-    }
-  }, [isOpen, onKeyDown])
+  const {
+    close,
+    isClosing,
+    isMounted
+  } = useModal({
+    animationDelay: ANIMATION_DELAY,
+    onClose,
+    isOpen
+  })
 
   const mods: Mods = {
-    [cls.opened]: isOpen
-
+    [cls.opened]: isOpen,
+    [cls.isClosing]: isClosing
   }
 
   if (lazy && !isMounted) {
     return null
   }
+
   return (
       <Portal>
-          <div className={classNames(cls.Modal, mods, [className])}>
-              <Overlay onClick={onClose} />
-                  <div className={cls.Modal__content}>
-                      {children}
-                  </div>
+        <div className={classNames(cls.Modal, mods, [className])}>
+          <Overlay onClick={close} />
+          <div
+            className={cls.content}
+          >
+            {children}
           </div>
+        </div>
       </Portal>
   )
 }
