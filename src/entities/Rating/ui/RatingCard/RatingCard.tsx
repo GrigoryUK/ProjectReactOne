@@ -19,6 +19,7 @@ interface RatingCardProps {
   hasFeedback?: boolean;
   onCancel?: (startsCount: number) => void;
   onAccept?: (startsCount: number, feedback?: string) => void;
+  rate?: number;
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
@@ -28,11 +29,12 @@ export const RatingCard = memo((props: RatingCardProps) => {
     feedbackTitle,
     hasFeedback,
     onCancel,
-    onAccept
+    onAccept,
+    rate = 0
   } = props
   const { t } = useTranslation()
   const [isOpenModal, setIsOpenModal] = useState(false)
-  const [startCount, setStartCount] = useState(0)
+  const [startCount, setStartCount] = useState(rate)
   const [feedback, setFeedback] = useState('')
 
   const onSelectStars = useCallback((selectedStarsCount: number) => {
@@ -79,9 +81,9 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
   return (
     <Card className={classNames(cls.RatingCard, {}, [className])}>
-        <VStack gap={'16'} max>
-            <Text title={title}/>
-            <StartRating size={40} onSelect={onSelectStars}/>
+        <VStack align={'center'} gap={'16'} max>
+            <Text title={startCount ? t('Ваша оценка') : title}/>
+            <StartRating selectedStarts={startCount} size={40} onSelect={onSelectStars}/>
         </VStack>
         <BrowserView>
           <Modal isOpen={isOpenModal} onClose={cancelHandler}>

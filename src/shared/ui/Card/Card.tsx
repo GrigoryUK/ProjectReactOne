@@ -15,12 +15,14 @@ interface CardProps extends HTMLAttributes<HTMLDivElement>{
     className?: string;
     children: ReactNode;
     theme?: CardTheme;
+    def?: boolean;
 }
 
 export const Card = memo((props: CardProps) => {
   const {
     className,
     children,
+    def = false,
     theme = CardTheme.PRIMARY,
     ...otherProps
   } = props

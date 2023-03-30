@@ -25,7 +25,7 @@ export const StartRating = memo((props: StartRatingProps) => {
   } = props
   const { t } = useTranslation()
   const [isHovered, setIsHovered] = useState(false)
-  const [currentStarsCount, setCurrentStarsCount] = useState(0)
+  const [currentStarsCount, setCurrentStarsCount] = useState(selectedStarts)
   const [isSelected, setIsSelected] = useState(Boolean(selectedStarts))
 
   const onHover = (starCount: number) => () => {
