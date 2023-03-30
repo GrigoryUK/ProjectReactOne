@@ -1,9 +1,9 @@
 import { updateProfileData } from './updateProfileData'
 import { Dispatch } from '@reduxjs/toolkit'
-import { StateSchema } from 'app/providers/StoreProvider'
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
 import { ValidateProfileError } from '../../types/editableProfileCardSchema'
 
 describe('updateProfileData.test', () => {

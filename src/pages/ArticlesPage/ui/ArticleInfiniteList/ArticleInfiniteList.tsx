@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleInfiniteList.module.scss'
 import { useTranslation } from 'react-i18next'
 import { memo } from 'react'
 import { useSelector } from 'react-redux'
 import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPageSelectors'
-import { ArticleList } from 'entities/Article'
+import { ArticleList } from '@/entities/Article'
 import { getArticles } from '../../model/slices/articlesPageSlice'
 
 interface ArticleInfiniteListProps {

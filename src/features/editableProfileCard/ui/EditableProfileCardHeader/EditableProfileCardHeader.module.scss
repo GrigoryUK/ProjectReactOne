@@ -5,4 +5,12 @@
     justify-content: space-between;
     margin-bottom: 1rem;
   }
+
+  .btn__row {
+    button {
+      &:first-child {
+        margin-right: 1rem;
+      }
+    }
+  }
 }

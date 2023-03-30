@@ -1,7 +1,7 @@
 import cls from './HListBox.module.scss'
 import { Fragment, memo, ReactNode, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { HStack } from '../Stack'
 
 export interface HListBoxItem {

@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Dropdown.module.scss'
 import { useTranslation } from 'react-i18next'
 import { Fragment, memo, ReactNode } from 'react'

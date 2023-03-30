@@ -1,13 +1,13 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleDetailPageHeader.module.scss'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
 import { useNavigate } from 'react-router'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
 import { canEditDetailSelector } from '../../model/selectors/canEditDetailSelector'
-import { getArticleDetailsData } from 'entities/Article'
+import { getArticleDetailsData } from '@/entities/Article'
 
 interface ArticleDetailPageHeaderProps {
     className?: string;
