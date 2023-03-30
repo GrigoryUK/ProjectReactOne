@@ -8,6 +8,7 @@ interface loginByUserNameProps {
     username: string,
     password: string
 }
+
 export const loginByUserName = createAsyncThunk<
     User,
     loginByUserNameProps,
