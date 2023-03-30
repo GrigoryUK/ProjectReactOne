@@ -1,0 +1,21 @@
+.StartRating {
+
+}
+
+.star {
+  fill: none;
+  stroke: var(--primary--text);
+  cursor: pointer;
+}
+
+.hovered {
+  fill: var(--primary--text);
+}
+
+.normal {
+  fill: none;
+}
+
+.selected {
+  cursor: auto;
+}
