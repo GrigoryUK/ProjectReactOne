@@ -2,7 +2,7 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames'
 import cls from './StartRating.module.scss'
 import { useTranslation } from 'react-i18next'
 import { memo, useState } from 'react'
-import { Icon } from '@/shared/ui/Icon/Icon'
+import { Icon } from '../Icon/Icon'
 import StarIcon from '@/shared/assets/icons/star.svg'
 import { types } from 'sass'
 

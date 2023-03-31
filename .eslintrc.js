@@ -35,7 +35,7 @@ module.exports = {
     "react/display-name": 0,
     'no-unused-vars': 0,
     'no-undef': 0,
-    'ug-fsd-plugin/path-checker': 2,
+    'ug-fsd-plugin/path-checker': ['error', { alias: '@' }],
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
       ignoreAttribute: ['data-testid', 'border', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'as', 'enter',
