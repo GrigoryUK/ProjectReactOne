@@ -36,7 +36,10 @@ module.exports = {
     'no-unused-vars': 0,
     'no-undef': 0,
     'ug-fsd-plugin/path-checker': ['error', { alias: '@' }],
-    'ug-fsd-plugin/public-api-imports': ['error', { alias: '@' }],
+    'ug-fsd-plugin/public-api-imports': ['error',
+      { alias: '@',
+        testFilesPatterns: ['**/*.test.*', '**/*.story*', '**/StoreDecorator.tsx']
+      }],
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
       ignoreAttribute: ['data-testid', 'border', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'as', 'enter',
