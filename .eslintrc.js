@@ -36,6 +36,7 @@ module.exports = {
     'no-unused-vars': 0,
     'no-undef': 0,
     'ug-fsd-plugin/path-checker': ['error', { alias: '@' }],
+    'ug-fsd-plugin/public-api-imports': ['error', { alias: '@' }],
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
       ignoreAttribute: ['data-testid', 'border', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'as', 'enter',

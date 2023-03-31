@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import React from 'react'
-import { Page } from '@/widgets/Page/Page'
+import { Page } from '@/widgets/Page'
 import { EditableProfileCard } from '@/features/editableProfileCard'
 import { useParams } from 'react-router'
 import { Text } from '@/shared/ui/Text/Text'

@@ -7,10 +7,8 @@ import { Profile } from '../../model/types/profile'
 import { Loader } from '@/shared/ui/Loader/Loader'
 import React from 'react'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
-import { Currency } from '@/entities/Currency/model/types/currency'
-import { CurrencySelect } from '@/entities/Currency'
-import { Country } from '@/entities/Country/model/types/country'
-import { CountrySelect } from '@/entities/Country'
+import { CurrencySelect, Currency } from '@/entities/Currency'
+import { CountrySelect, Country } from '@/entities/Country'
 
 interface ProfileCardProps {
     className?: string;
