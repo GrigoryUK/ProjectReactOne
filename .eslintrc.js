@@ -40,6 +40,10 @@ module.exports = {
       { alias: '@',
         testFilesPatterns: ['**/*.test.*', '**/*.story*', '**/StoreDecorator.tsx']
       }],
+    'ug-fsd-plugin/layer-imports': ['error',
+      { alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+      }],
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
       ignoreAttribute: ['data-testid', 'border', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'as', 'enter',

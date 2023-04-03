@@ -1,3 +1,4 @@
+// eslint-disable-next-line ug-fsd-plugin/layer-imports
 import '@/app/styles/index.scss'
 import { Story } from '@storybook/react'
 
