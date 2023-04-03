@@ -2,6 +2,7 @@
 export function buildSvgLoader (isDev: boolean) {
   return {
     test: /\.svg$/,
+    exclude: /node_modules/,
     use: [
       {
         loader: '@svgr/webpack',
