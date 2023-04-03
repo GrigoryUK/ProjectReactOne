@@ -10,11 +10,13 @@ import cls from './ArticleListItem.module.scss'
 import EyeIcon from '@/shared/assets/icons/eye.svg'
 import { getRouteArticlesDetails } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { AppImage } from '@/shared/ui/AppImage'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Button } from '@/shared/ui/Button'
 import { Card } from '@/shared/ui/Card'
 import { Icon } from '@/shared/ui/Icon'
+import { Skeleton } from '@/shared/ui/Skeleton'
 import { Text, TextSize } from '@/shared/ui/Text'
 
 interface ArticleListItemProps {
@@ -51,7 +53,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         <Text text={article.type.join(', ')} className={cls.ArticleListItem__types}/>
                     </div>
                     <div className={cls.ArticleListItem__card__box}>
-                        <img src={article.img} alt={article.title} className={cls.ArticleListItem__image}/>
+                        <AppImage
+                          fallback={<Skeleton width={'100%'} height={250}/>}
+                          className={cls.ArticleListItem__image}
+                          src={article.img}
+                          alt={article.title}
+                        />
                     </div>
                     <div className={cls.ArticleListItem__card__text}>
                         {textBlock &&
@@ -77,7 +84,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <AppLink target={target} className={cls.link} to={getRouteArticlesDetails(article.id)}>
                 <Card className={cls.ArticleListItem__card}>
                     <div className={cls.ArticleListItem__card__box}>
-                        <img src={article.img} alt={article.title} className={cls.ArticleListItem__image}/>
+                        <AppImage
+                          fallback={<Skeleton width={'100%'} height={250}/>}
+                          className={cls.ArticleListItem__image}
+                          src={article.img}
+                          alt={article.title}
+                        />
                         <Text text={article.createdAt} className={cls.ArticleListItem__date}/>
                     </div>
                     <div className={cls.ArticleListItem__info}>

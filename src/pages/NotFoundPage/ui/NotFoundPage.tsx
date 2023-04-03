@@ -13,7 +13,7 @@ interface NotFoundPageProps {
 export const NotFoundPage = ({ className }: NotFoundPageProps) => {
   const { t } = useTranslation()
   return (
-        <Page className={classNames(cls.NotFoundPage, {}, [className])}>
+        <Page data-testid={'NotFoundPage'} className={classNames(cls.NotFoundPage, {}, [className])}>
             <h1>{t('Page not found')}</h1>
             <AppLink theme={AppLinkTheme.SECONDARY} to={'/'}>{t('Main')}</AppLink>
         </Page>

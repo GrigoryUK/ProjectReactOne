@@ -11,8 +11,9 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
+import { TestProps } from '@/shared/types/tests'
 
-interface PageProps {
+interface PageProps extends TestProps {
     className?: string;
     children: ReactNode;
     onScrollEnd?: () => void;
@@ -52,6 +53,7 @@ export const Page = memo((props: PageProps) => {
         <section
             onScroll={onScroll}
             ref={wrapperRef}
+            data-testid={props['data-testid'] ?? 'Page'}
             className={classNames(cls.Page, {}, [className])}
         >
             {children}

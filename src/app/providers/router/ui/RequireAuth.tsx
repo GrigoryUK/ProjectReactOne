@@ -14,7 +14,6 @@ export interface RequireAuthProps {
 export function RequireAuth ({ children, roles }: RequireAuthProps) {
   const auth = useSelector(getUserAuthData)
   const userRoles = useSelector(getRoleUsers)
-  console.log(auth, userRoles)
   const location = useLocation()
 
   const hasRequiredRoles = useMemo(() => {
