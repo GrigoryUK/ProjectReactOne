@@ -8,7 +8,7 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import cls from './ArticleListItem.module.scss'
 
 import EyeIcon from '@/shared/assets/icons/eye.svg'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticlesDetails } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
@@ -59,7 +59,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         }
                     </div>
                     <div className={cls.ArticleListItem__card__row}>
-                            <AppLink target={target} className={cls.link} to={RoutePath.articles_details + article.id}>
+                            <AppLink target={target} className={cls.link} to={getRouteArticlesDetails(article.id)}>
                                 <Button>{t('Читать далее')}</Button>
                             </AppLink>
                             <div className={cls.ArticleListItem__info__box}>
@@ -74,7 +74,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
   return (
         <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-            <AppLink target={target} className={cls.link} to={RoutePath.articles_details + article.id}>
+            <AppLink target={target} className={cls.link} to={getRouteArticlesDetails(article.id)}>
                 <Card className={cls.ArticleListItem__card}>
                     <div className={cls.ArticleListItem__card__box}>
                         <img src={article.img} alt={article.title} className={cls.ArticleListItem__image}/>

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import cls from './AvatarDropdown.module.scss'
 
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteAdmin, getRouteArticlesCreate, getRouteProfile } from '@/shared/const/router'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Dropdown } from '@/shared/ui/Dropdown'
@@ -31,10 +31,14 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     dispatch(userActions.logout())
   }, [dispatch])
 
+  if (!authData) {
+    return null
+  }
+
   const avatar = (
     <div className={cls.avatar}>
-      <Avatar size={30} src={authData?.avatar}/>
-      <Text text={authData?.username}/>
+      <Avatar size={30} src={authData.avatar}/>
+      <Text text={authData.username}/>
     </div>
   )
   return (
@@ -42,16 +46,16 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
       ...(isAdminPanelAvailable
         ? [{
             content: t('Админ панель'),
-            href: RoutePath.admin_panel
+            href: getRouteAdmin()
           }]
         : []),
       {
         content: t('Profile'),
-        href: `${RoutePath.profile}${authData?.id}`
+        href: getRouteProfile(authData.id)
       },
       {
         content: t('Создать статью'),
-        href: RoutePath.articles_create
+        href: getRouteArticlesCreate()
       },
       {
         content: t('go out'),

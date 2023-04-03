@@ -4,7 +4,7 @@ import { Comment } from '../../model/types/comment'
 
 import cls from './CommentCard.module.scss'
 
-import { RoutePath } from '@/shared/const/router'
+import { getRouteProfile } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
@@ -37,9 +37,10 @@ export const CommentCard = memo((props: CommentCardProps) => {
   if (!comment) {
     return null
   }
+
   return (
         <div className={classNames(cls.CommentCard, {}, [className])}>
-                <AppLink theme={AppLinkTheme.PRIMARY} to={`${RoutePath.profile}${comment.user.id}`} className={cls.CommentCard__header}>
+                <AppLink theme={AppLinkTheme.PRIMARY} to={getRouteProfile(comment.user.id)} className={cls.CommentCard__header}>
                     {comment.user.avatar
                       ? <Avatar
                             src={comment.user.avatar}
