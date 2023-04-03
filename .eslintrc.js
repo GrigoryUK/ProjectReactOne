@@ -30,7 +30,7 @@ module.exports = {
     '@typescript-eslint/prefer-nullish-coalescing': 0,
     '@typescript-eslint/strict-boolean-expressions': 0,
     '@typescript-eslint/naming-convention': 0,
-    '@typescript-eslint/no-floating-promises': 1,
+    '@typescript-eslint/no-floating-promises': 0,
     '@typescript-eslint/no-misused-promises': 1,
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
