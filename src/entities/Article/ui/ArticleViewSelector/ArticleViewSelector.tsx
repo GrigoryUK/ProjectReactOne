@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { memo } from 'react'
 import ListIcon from '@/shared/assets/icons/icon-list.svg'
 import GridIcon from '@/shared/assets/icons/icon-grid.svg'
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
-import { Icon } from '@/shared/ui/Icon/Icon'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
+import { Icon } from '@/shared/ui/Icon'
 import { ArticleView } from '../../model/consts/consts'
 
 interface ArticleViewSelectorProps {

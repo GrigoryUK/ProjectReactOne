@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Tabs.module.scss'
 import { useTranslation } from 'react-i18next'
-import { memo, ReactNode, useCallback } from 'react'
+import { ReactNode, useCallback } from 'react'
 import { Card, CardTheme } from '../Card/Card'
 
 export interface TabsItem<T extends string> {

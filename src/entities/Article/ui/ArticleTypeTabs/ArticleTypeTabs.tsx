@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticleTypeTabs.module.scss'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback, useMemo } from 'react'
-import { Tabs, TabsItem } from '@/shared/ui/Tabs/Tabs'
+import { Tabs, TabsItem } from '@/shared/ui/Tabs'
 import { ArticleType } from '../../model/consts/consts'
 
 interface ArticleTypeTabsProps {
