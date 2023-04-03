@@ -1,30 +1,33 @@
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
 
-import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue'
-import { counterActions } from '../model/slice/counterSlice'
+import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue'
+import { useCounterActions } from '../model/slice/counterSlice'
 
 import { Button, ButtonTheme } from '@/shared/ui/Button'
 
 export const Counter = () => {
-  const dispatch = useDispatch()
-  const counterValue = useSelector(getCounterValue)
+  const counterValue = useCounterValue()
   const { t } = useTranslation()
-  const increment = () => {
-    dispatch(counterActions.increment())
+  const { decrement, increment, add } = useCounterActions()
+  const incrementHandler = () => {
+    increment()
   }
 
-  const decrement = () => {
-    dispatch(counterActions.decrement())
+  const decrementHandler = () => {
+    decrement()
+  }
+
+  const HandlerAddFive = () => {
+    add(5)
   }
 
   return (
         <div >
             <h1 data-testid="value-title"> {counterValue}</h1>
-            <Button theme={ButtonTheme.OUTLINE} onClick={increment} data-testid="btn-increment">
+            <Button theme={ButtonTheme.OUTLINE} onClick={incrementHandler} data-testid="btn-increment">
                 {t('increment')}
             </Button>
-            <Button theme={ButtonTheme.OUTLINE} onClick={decrement} data-testid="btn-decrement">
+            <Button theme={ButtonTheme.OUTLINE} onClick={decrementHandler} data-testid="btn-decrement">
                 {t('decrement')}
             </Button>
         </div>
