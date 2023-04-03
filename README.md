@@ -182,7 +182,7 @@ Clear.args = {
 - [Profile](/src/entities/Profile)
 - [Rating](/src/entities/Rating)
 - [User](/src/entities/User)
-- 
+
 ## Фичи (features)
 
 - [addCommentForm](/src/features/addCommentForm)
