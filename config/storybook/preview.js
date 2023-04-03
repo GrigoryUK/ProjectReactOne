@@ -16,7 +16,14 @@ export const parameters = {
       date: /Date$/
     }
   },
-  layout: 'fullscreen'
+  layout: 'fullscreen',
+  themes: {
+    default: 'light',
+    list: [
+      { name: 'light', class: Theme.LIGHT, color: '#e1e2e3' },
+      { name: 'dark', class: Theme.DARK, color: '#111111' }
+    ]
+  }
 }
 
 addDecorator(StyleDecorator)

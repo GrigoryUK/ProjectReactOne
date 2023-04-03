@@ -8,9 +8,7 @@ import { Theme } from '@/shared/const/theme'
 export const ThemeDecorator = (theme: Theme) => {
   return (StoryComponent: Story) => (
     <ThemeProvider initialTheme={theme}>
-      <div className={`app ${theme}`}>
         <StoryComponent/>
-      </div>
     </ThemeProvider>
   )
 }
