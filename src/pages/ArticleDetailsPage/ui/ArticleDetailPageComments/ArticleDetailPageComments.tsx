@@ -1,19 +1,22 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './ArticleDetailPageComments.module.scss'
-import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
-import { Text } from '@/shared/ui/Text'
-import { AddCommentForm } from '@/features/addCommentForm'
-import { CommentList } from '@/entities/Comment'
+import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { getArticleComments } from '../../model/slice/ArticleDetailCommentsSlice'
+
 import { getArticleCommentsIsLoading } from '../../model/selectors/getComments'
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import {
   fetchCommentsByArticleId
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+import { getArticleComments } from '../../model/slice/ArticleDetailCommentsSlice'
+
+import cls from './ArticleDetailPageComments.module.scss'
+
+import { CommentList } from '@/entities/Comment'
+import { AddCommentForm } from '@/features/addCommentForm'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { Text } from '@/shared/ui/Text'
 
 interface ArticleDetailPageCommentsProps {
     className?: string;

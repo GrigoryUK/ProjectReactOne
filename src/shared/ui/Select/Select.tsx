@@ -1,6 +1,8 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
+import { ChangeEvent, useMemo } from 'react'
+
 import cls from './Select.module.scss'
-import { ChangeEvent, memo, useMemo } from 'react'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 // SelectOption<T extends string> создаем гибко настраевымый дженерик (плохо работает с memo), теперь мы можем определять тип снажури
 export interface SelectOption<T extends string> {

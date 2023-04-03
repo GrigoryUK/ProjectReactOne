@@ -1,15 +1,17 @@
 import React, { memo, useCallback, useState } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './Navbar.module.scss'
-import { ThemeSwitcher } from '@/features/ThemeSwitcher'
-import { LangSwitcher } from '@/features/LangSwitcher'
 import { useTranslation } from 'react-i18next'
-import { LoginModal } from '@/features/AuthByUserName'
 import { useSelector } from 'react-redux'
-import { getUserAuthData } from '@/entities/User'
+
+import cls from './Navbar.module.scss'
+
 import { Profile } from '@/entities/Profile'
-import { NotificationButton } from '@/features/notificationButton'
+import { getUserAuthData } from '@/entities/User'
+import { LoginModal } from '@/features/AuthByUserName'
+import { LangSwitcher } from '@/features/LangSwitcher'
+import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { AvatarDropdown } from '@/features/avatarDropdown'
+import { NotificationButton } from '@/features/notificationButton'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button, ButtonTheme } from '@/shared/ui/Button'
 
 interface NavbarProps {

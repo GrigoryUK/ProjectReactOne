@@ -1,16 +1,19 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './ArticleDetailPage.module.scss'
-import { useTranslation } from 'react-i18next'
 import { memo } from 'react'
-import { ArticleDetails } from '@/entities/Article'
+import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router'
+
+import { articleDetailsPageReducer } from '../../model/slice'
+import { ArticleDetailPageComments } from '../ArticleDetailPageComments/ArticleDetailPageComments'
+import { ArticleDetailPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader'
+
+import cls from './ArticleDetailPage.module.scss'
+
+import { ArticleDetails } from '@/entities/Article'
+import { ArticleRating } from '@/features/articleRating'
+import { ArticleRecommendationList } from '@/features/articleRecommendationList'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { Page } from '@/widgets/Page'
-import { articleDetailsPageReducer } from '../../model/slice'
-import { ArticleDetailPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader'
-import { ArticleRecommendationList } from '@/features/articleRecommendationList'
-import { ArticleDetailPageComments } from '../ArticleDetailPageComments/ArticleDetailPageComments'
-import { ArticleRating } from '@/features/articleRating'
 
 interface ArticleDetailPageProps {
     className?: string;

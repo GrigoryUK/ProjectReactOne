@@ -1,6 +1,7 @@
 
-import { StateSchema } from '@/app/providers/StoreProvider'
 import { getProfileReadonly } from './getProfileReadonly'
+
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getProfileIsLoading.test', () => {
   test('should return error', () => {

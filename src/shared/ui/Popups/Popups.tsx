@@ -1,8 +1,10 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './Popups.module.scss'
-import { useTranslation } from 'react-i18next'
-import { memo, ReactNode } from 'react'
 import { Popover } from '@headlessui/react'
+import { memo, ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
+
+import cls from './Popups.module.scss'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 export type DropdownDirection = 'top left' | 'top right' | 'bottom left' | 'bottom right';
 interface PopupsProps {

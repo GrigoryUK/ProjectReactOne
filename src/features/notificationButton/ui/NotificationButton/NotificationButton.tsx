@@ -1,14 +1,14 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './NotificationButton.module.scss'
-import { useTranslation } from 'react-i18next'
 import React, { memo, useCallback, useState } from 'react'
-import { Popups } from '@/shared/ui/Popups'
-import { Icon } from '@/shared/ui/Icon'
-import NotificationIcon from '@/shared/assets/icons/notification.svg'
-import { NotificationList } from '@/entities/Notification'
 import { BrowserView, MobileView } from 'react-device-detect'
+
+import cls from './NotificationButton.module.scss'
+
+import { NotificationList } from '@/entities/Notification'
+import NotificationIcon from '@/shared/assets/icons/notification.svg'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { Drawer } from '@/shared/ui/Drawer'
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider'
+import { Icon } from '@/shared/ui/Icon'
+import { Popups } from '@/shared/ui/Popups'
 
 interface NotificationButtonProps {
   className?: string;

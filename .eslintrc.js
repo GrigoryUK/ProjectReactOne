@@ -19,7 +19,9 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
+    'unused-imports',
     'ug-fsd-plugin',
+    'import'
   ],
   rules: {
     'react/react-in-jsx-scope': 0,
@@ -35,6 +37,24 @@ module.exports = {
     "react/display-name": 0,
     'no-unused-vars': 0,
     'no-undef': 0,
+    'import/order': [
+      'error',
+      {
+        'pathGroups': [
+          {
+            'pattern': '@/**',
+            'group': 'internal',
+            'position': 'after'
+          }
+        ],
+        'newlines-between': 'always',
+        'alphabetize': {
+          'order': 'asc',
+          'caseInsensitive': false
+        }
+      }
+    ],
+    'unused-imports/no-unused-imports': 'error',
     'ug-fsd-plugin/path-checker': ['error', { alias: '@' }],
     'ug-fsd-plugin/public-api-imports': ['error',
       { alias: '@',

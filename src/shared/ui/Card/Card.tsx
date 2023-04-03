@@ -1,7 +1,9 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './Card.module.scss'
-import { useTranslation } from 'react-i18next'
 import { HTMLAttributes, memo, ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
+
+import cls from './Card.module.scss'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 export enum CardTheme {
     PRIMARY = 'primary',

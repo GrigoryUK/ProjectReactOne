@@ -1,6 +1,8 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './Avatar.module.scss'
 import { CSSProperties, useMemo } from 'react'
+
+import cls from './Avatar.module.scss'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 interface AvatarProps {
     className?: string;

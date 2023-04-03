@@ -1,6 +1,7 @@
 
-import { StateSchema } from '@/app/providers/StoreProvider'
 import { getLoginUserName } from './getLoginUserName'
+
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getLoginUserName.test', () => {
   test('should return value', () => {

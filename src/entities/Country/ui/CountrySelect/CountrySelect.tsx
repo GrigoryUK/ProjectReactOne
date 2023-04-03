@@ -1,6 +1,8 @@
-import { useTranslation } from 'react-i18next'
 import React, { memo, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
+
 import { Country } from '../../model/types/country'
+
 import { HListBox } from '@/shared/ui/HListBox'
 
 interface CountrySelectProps {

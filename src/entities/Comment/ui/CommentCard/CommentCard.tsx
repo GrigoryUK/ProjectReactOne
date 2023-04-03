@@ -1,12 +1,15 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './CommentCard.module.scss'
 import { memo } from 'react'
+
 import { Comment } from '../../model/types/comment'
-import { Avatar } from '@/shared/ui/Avatar'
-import { Text } from '@/shared/ui/Text'
-import { Skeleton } from '@/shared/ui/Skeleton'
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
+
+import cls from './CommentCard.module.scss'
+
 import { RoutePath } from '@/shared/const/router'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
+import { Avatar } from '@/shared/ui/Avatar'
+import { Skeleton } from '@/shared/ui/Skeleton'
+import { Text } from '@/shared/ui/Text'
 
 interface CommentCardProps {
     className?: string;

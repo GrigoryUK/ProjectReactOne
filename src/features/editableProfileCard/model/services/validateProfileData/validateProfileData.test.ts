@@ -1,9 +1,12 @@
-import { validateProfileData } from './validateProfileData'
 import { Dispatch } from '@reduxjs/toolkit'
+
+import { ValidateProfileError } from '../../types/editableProfileCardSchema'
+
+import { validateProfileData } from './validateProfileData'
+
 import { StateSchema } from '@/app/providers/StoreProvider'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
-import { ValidateProfileError } from '../../types/editableProfileCardSchema'
 
 describe('validateProfileData.test', () => {
   let dispatch: Dispatch

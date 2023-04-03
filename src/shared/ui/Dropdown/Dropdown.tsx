@@ -1,9 +1,11 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './Dropdown.module.scss'
-import { useTranslation } from 'react-i18next'
-import { Fragment, memo, ReactNode } from 'react'
 import { Menu, Transition } from '@headlessui/react'
+import { Fragment, memo, ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+
+import cls from './Dropdown.module.scss'
+
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 export interface DropdownItem {
     disabled?: boolean;
