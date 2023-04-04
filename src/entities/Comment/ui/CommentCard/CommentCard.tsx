@@ -6,12 +6,13 @@ import cls from './CommentCard.module.scss'
 
 import { getRouteProfile } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { TestProps } from '@/shared/types/tests'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Skeleton } from '@/shared/ui/Skeleton'
 import { Text } from '@/shared/ui/Text'
 
-interface CommentCardProps {
+interface CommentCardProps extends TestProps {
     className?: string;
     comment?: Comment;
     isLoading?: boolean;
@@ -39,7 +40,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
   }
 
   return (
-        <div className={classNames(cls.CommentCard, {}, [className])}>
+        <div data-testid={'CommentCard.Content'} className={classNames(cls.CommentCard, {}, [className])}>
                 <AppLink theme={AppLinkTheme.PRIMARY} to={getRouteProfile(comment.user.id)} className={cls.CommentCard__header}>
                     {comment.user.avatar
                       ? <Avatar

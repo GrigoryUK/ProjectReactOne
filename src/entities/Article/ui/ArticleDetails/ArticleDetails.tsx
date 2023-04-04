@@ -22,14 +22,15 @@ import EyeIcon from '@/shared/assets/icons/eye.svg'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { TestProps } from '@/shared/types/tests'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Icon } from '@/shared/ui/Icon'
 import { Skeleton } from '@/shared/ui/Skeleton'
 import { Text, TextSize, TextTheme } from '@/shared/ui/Text'
 
-interface ArticleDetailsProps {
+interface ArticleDetailsProps extends TestProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {
@@ -118,7 +119,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   return (
       <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-          <div className={classNames(cls.ArticleDetails, {}, [className])}>
+          <div data-testid={'ArticleDetails.Info'} className={classNames(cls.ArticleDetails, {}, [className])}>
               {content}
           </div>
       </DynamicModuleLoader>

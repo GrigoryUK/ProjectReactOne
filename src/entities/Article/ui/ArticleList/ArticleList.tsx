@@ -9,9 +9,10 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 import cls from './ArticleList.module.scss'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { TestProps } from '@/shared/types/tests'
 import { Text } from '@/shared/ui/Text'
 
-interface ArticleListProps {
+interface ArticleListProps extends TestProps {
     className?: string;
     articles: Article[];
     isLoading?: boolean;
@@ -49,7 +50,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   return (
-        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+        <div data-testid={'ArticleList'} className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {articles.length > 0
               ? articles.map(renderArticle)
               : null

@@ -30,14 +30,18 @@ const ArticleDetailPage = (props: ArticleDetailPageProps) => {
   const { t } = useTranslation()
   const { id } = useParams<{id: string}>()
 
+  if (!id) {
+    return null
+  }
+
   return (
       <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-          <Page className={classNames(cls.ArticleDetailPage, {}, [className])}>
+          <Page data-testid={'ArticleDetailPage'} className={classNames(cls.ArticleDetailPage, {}, [className])}>
               <ArticleDetailPageHeader/>
-              <ArticleDetails id={id!}/>
-              <ArticleRating articleId={id!} />
+              <ArticleDetails id={id}/>
+              <ArticleRating articleId={id} />
                <ArticleRecommendationList/>
-             <ArticleDetailPageComments id={id!}/>
+             <ArticleDetailPageComments id={id}/>
           </Page>
       </DynamicModuleLoader>
 

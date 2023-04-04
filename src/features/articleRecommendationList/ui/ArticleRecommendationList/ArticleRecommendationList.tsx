@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import React, { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { useArticleRecommendationsList } from '../../api/articleRecommendationApi'
@@ -7,9 +7,10 @@ import cls from './ArticleRecommendationList.module.scss'
 
 import { ArticleList } from '@/entities/Article'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { TestProps } from '@/shared/types/tests'
 import { Text } from '@/shared/ui/Text'
 
-interface ArticleRecommendationListProps {
+interface ArticleRecommendationListProps extends TestProps {
     className?: string;
 }
 
@@ -23,7 +24,7 @@ export const ArticleRecommendationList = memo((props: ArticleRecommendationListP
   }
 
   return (
-        <div className={classNames(cls.ArticleRecommendationList, {}, [className])}>
+        <div data-testid={'ArticleRecommendationList'} className={classNames(cls.ArticleRecommendationList, {}, [className])}>
             <Text title={t('Рекомендуем')} className={cls.title}/>
             <ArticleList target="_blank" articles={articles} />
         </div>

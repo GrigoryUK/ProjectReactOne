@@ -19,7 +19,7 @@ export enum InputSize {
     X = 'size_x'
 }
 
-interface InputProps extends HtmlInputProps{
+interface InputProps extends HtmlInputProps {
     className?: string;
     value?: string | number;
     onChange?: (value: string) => void;

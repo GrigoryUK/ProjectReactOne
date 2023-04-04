@@ -1,3 +1,4 @@
+
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -10,10 +11,11 @@ import cls from './AddCommentForm.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { TestProps } from '@/shared/types/tests'
 import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { Input, InputTheme } from '@/shared/ui/Input'
 
-export interface AddCommentFormProps {
+export interface AddCommentFormProps extends TestProps {
     className?: string;
     onSendComment: (text: string) => void;
 }
@@ -41,8 +43,9 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
   return (
       <DynamicModuleLoader reducers={reducers}>
-          <div className={classNames(cls.AddCommentForm, {}, [className])}>
+          <div data-testid={'AddCommentForm'} className={classNames(cls.AddCommentForm, {}, [className])}>
                <Input
+                  data-testid={'AddCommentForm.Input'}
                   theme={InputTheme.PRIMARY}
                   className={cls.AddCommentForm__input}
                   value={text}
@@ -50,6 +53,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                   placeholder={t('введите ваш комментарий')}
                />
               <Button
+                  data-testid={'AddCommentForm.Button'}
                   onClick={onSendHandler}
                   className={cls.AddCommentForm__btn}
                   theme={ButtonTheme.OUTLINE}

@@ -10,6 +10,7 @@ import cls from './ArticleListItem.module.scss'
 import EyeIcon from '@/shared/assets/icons/eye.svg'
 import { getRouteArticlesDetails } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { TestProps } from '@/shared/types/tests'
 import { AppImage } from '@/shared/ui/AppImage'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
@@ -19,7 +20,7 @@ import { Icon } from '@/shared/ui/Icon'
 import { Skeleton } from '@/shared/ui/Skeleton'
 import { Text, TextSize } from '@/shared/ui/Text'
 
-interface ArticleListItemProps {
+interface ArticleListItemProps extends TestProps {
     className?: string;
     article: Article
     view: ArticleView
@@ -39,7 +40,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const textBlock = article.blocks
       .find((block) => block.type === ArticleBlockType.TEXT) as ArticleBlockText
     return (
-            <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+            <div data-testid={'ArticleListItem'} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <Card className={cls.ArticleListItem__card}>
                     <div className={cls.ArticleListItem__header}>
                         <div className={cls.ArticleListItem__header__box}>
@@ -80,7 +81,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   }
 
   return (
-        <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+        <div data-testid={'ArticleListItem'} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
             <AppLink target={target} className={cls.link} to={getRouteArticlesDetails(article.id)}>
                 <Card className={cls.ArticleListItem__card}>
                     <div className={cls.ArticleListItem__card__box}>
