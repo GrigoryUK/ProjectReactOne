@@ -67,7 +67,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm ci --force
+        run: npm install --force
       - name: unit testing
         if: always()
         run: npm run test:unit
@@ -99,7 +99,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm ci --force
+        run: npm install --force
       - name: linting typescript
         run: npm run lint:ts
         if: always()
