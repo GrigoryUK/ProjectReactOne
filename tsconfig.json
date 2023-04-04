@@ -23,10 +23,14 @@
     },
   "include": [
     ".config/jest/setupTests.ts",
+    "./.eslintrc.js",
     "./src/**/*.ts",
     "./src/**/*.tsx",
     "**/*.tsx",
     "**/*.ts",
     "**/*.js",
+  ],
+  "exclude": [
+    "cypress.config.ts"
   ]
 }
