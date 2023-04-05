@@ -1,43 +1,43 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import React from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
 
-import { Input, InputTheme } from './Input'
+import { Input, InputTheme } from './Input';
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 export default {
-  title: 'shared/Input',
-  component: Input,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof Input>
+    title: 'shared/Input',
+    component: Input,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof Input>;
 
-const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />
+const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const Primary = Template.bind({})
+export const Primary = Template.bind({});
 
 Primary.args = {
-  placeholder: 'placeholder',
-  theme: InputTheme.PRIMARY
-}
-export const PrimaryDark = Template.bind({})
+    placeholder: 'placeholder',
+    theme: InputTheme.PRIMARY,
+};
+export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
-  placeholder: 'placeholder',
-  theme: InputTheme.PRIMARY
-}
+    placeholder: 'placeholder',
+    theme: InputTheme.PRIMARY,
+};
 
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)]
-export const Clear = Template.bind({})
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Clear = Template.bind({});
 Clear.args = {
-  placeholder: 'placeholder',
-  theme: InputTheme.CLEAR
-}
+    placeholder: 'placeholder',
+    theme: InputTheme.CLEAR,
+};
 
-export const ClearDark = Template.bind({})
+export const ClearDark = Template.bind({});
 ClearDark.args = {
-  placeholder: 'placeholder',
-  theme: InputTheme.CLEAR
-}
-ClearDark.decorators = [ThemeDecorator(Theme.DARK)]
+    placeholder: 'placeholder',
+    theme: InputTheme.CLEAR,
+};
+ClearDark.decorators = [ThemeDecorator(Theme.DARK)];

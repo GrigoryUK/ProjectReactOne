@@ -1,1 +1,1 @@
-export { StartRating } from './StartRating'
+export { StartRating } from './StartRating';

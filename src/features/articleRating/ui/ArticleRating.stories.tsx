@@ -1,43 +1,45 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import React from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
 
-import ArticleRating from './ArticleRating'
+import ArticleRating from './ArticleRating';
 
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
-  title: 'features/ArticleRating',
-  component: ArticleRating,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof ArticleRating>
+    title: 'features/ArticleRating',
+    component: ArticleRating,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof ArticleRating>;
 
-const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />
+const Template: ComponentStory<typeof ArticleRating> = (args) => (
+    <ArticleRating {...args} />
+);
 
-export const Primary = Template.bind({})
+export const Primary = Template.bind({});
 
 Primary.args = {
-  articleId: '1'
-}
+    articleId: '1',
+};
 Primary.decorators = [
-  StoreDecorator({
-    user: {
-      authData: { id: '1' }
-    }
-  })
-]
+    StoreDecorator({
+        user: {
+            authData: { id: '1' },
+        },
+    }),
+];
 Primary.parameters = {
-  mockData: [
-    {
-      url: `${__API__}/article-ratings?userId=1&articleId=1`,
-      method: 'GET',
-      status: 200,
-      response: [
+    mockData: [
         {
-          rate: 3
-        }
-      ]
-    }
-  ]
-}
+            url: `${__API__}/article-ratings?userId=1&articleId=1`,
+            method: 'GET',
+            status: 200,
+            response: [
+                {
+                    rate: 3,
+                },
+            ],
+        },
+    ],
+};

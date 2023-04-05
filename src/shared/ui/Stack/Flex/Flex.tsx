@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from 'react';
 
-import cls from './Flex.module.scss'
+import cls from './Flex.module.scss';
 
-import { classNames, Mods } from '@/shared/lib/classNames/classNames'
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexAlign = 'start' | 'center' | 'end';
@@ -10,31 +10,34 @@ export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '16' | '32';
 
 const justifyClasses: Record<FlexJustify, string> = {
-  start: cls.justifyStart,
-  center: cls.justifyCenter,
-  end: cls.justifyEnd,
-  between: cls.justifyBetween
-}
+    start: cls.justifyStart,
+    center: cls.justifyCenter,
+    end: cls.justifyEnd,
+    between: cls.justifyBetween,
+};
 
 const alignClasses: Record<FlexAlign, string> = {
-  start: cls.AlignStart,
-  center: cls.AlignCenter,
-  end: cls.AlignEnd
-}
+    start: cls.AlignStart,
+    center: cls.AlignCenter,
+    end: cls.AlignEnd,
+};
 
 const gapClasses: Record<FlexGap, string> = {
-  4: cls.gap4,
-  8: cls.gap8,
-  16: cls.gap16,
-  32: cls.gap32
-}
+    4: cls.gap4,
+    8: cls.gap8,
+    16: cls.gap16,
+    32: cls.gap32,
+};
 
 const directionClasses: Record<FlexDirection, string> = {
-  row: cls.directionRow,
-  column: cls.directionColumn
-}
+    row: cls.directionRow,
+    column: cls.directionColumn,
+};
 
-type DivProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+type DivProps = React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+>;
 
 export interface FlexProps extends DivProps {
     className?: string;
@@ -47,31 +50,29 @@ export interface FlexProps extends DivProps {
 }
 
 export const Flex = (props: FlexProps) => {
-  const {
-    className,
-    children,
-    justify = 'start',
-    align = 'center',
-    direction = 'row',
-    gap,
-    max
-  } = props
+    const {
+        className,
+        children,
+        justify = 'start',
+        align = 'center',
+        direction = 'row',
+        gap,
+        max,
+    } = props;
 
-  const classes = [
-    className,
-    justifyClasses[justify],
-    alignClasses[align],
-    directionClasses[direction],
-    gap && gapClasses[gap]
-  ]
+    const classes = [
+        className,
+        justifyClasses[justify],
+        alignClasses[align],
+        directionClasses[direction],
+        gap && gapClasses[gap],
+    ];
 
-  const mods: Mods = {
-    [cls.max]: max
-  }
+    const mods: Mods = {
+        [cls.max]: max,
+    };
 
-  return (
-        <div className={classNames(cls.Flex, mods, classes)}>
-            {children}
-        </div>
-  )
-}
+    return (
+        <div className={classNames(cls.Flex, mods, classes)}>{children}</div>
+    );
+};

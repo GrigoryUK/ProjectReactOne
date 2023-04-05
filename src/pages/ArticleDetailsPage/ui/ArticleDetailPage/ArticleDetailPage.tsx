@@ -1,51 +1,53 @@
-import { memo } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useParams } from 'react-router'
+import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router';
 
-import { articleDetailsPageReducer } from '../../model/slice'
-import { ArticleDetailPageComments } from '../ArticleDetailPageComments/ArticleDetailPageComments'
-import { ArticleDetailPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader'
+import { articleDetailsPageReducer } from '../../model/slice';
+import { ArticleDetailPageComments } from '../ArticleDetailPageComments/ArticleDetailPageComments';
+import { ArticleDetailPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader';
 
-import cls from './ArticleDetailPage.module.scss'
+import cls from './ArticleDetailPage.module.scss';
 
-import { ArticleDetails } from '@/entities/Article'
-import { ArticleRating } from '@/features/articleRating'
-import { ArticleRecommendationList } from '@/features/articleRecommendationList'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { Page } from '@/widgets/Page'
+import { ArticleDetails } from '@/entities/Article';
+import { ArticleRating } from '@/features/articleRating';
+import { ArticleRecommendationList } from '@/features/articleRecommendationList';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Page } from '@/widgets/Page';
 
 interface ArticleDetailPageProps {
     className?: string;
 }
 
 const reducers: ReducersList = {
-  articleDetailsPage: articleDetailsPageReducer
-}
+    articleDetailsPage: articleDetailsPageReducer,
+};
 
 const ArticleDetailPage = (props: ArticleDetailPageProps) => {
-  const {
-    className
-  } = props
-  const { t } = useTranslation()
-  const { id } = useParams<{id: string}>()
+    const { className } = props;
+    const { t } = useTranslation();
+    const { id } = useParams<{ id: string }>();
 
-  if (!id) {
-    return null
-  }
+    if (!id) {
+        return null;
+    }
 
-  return (
-      <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-          <Page data-testid={'ArticleDetailPage'} className={classNames(cls.ArticleDetailPage, {}, [className])}>
-              <ArticleDetailPageHeader/>
-              <ArticleDetails id={id}/>
-              <ArticleRating articleId={id} />
-               <ArticleRecommendationList/>
-             <ArticleDetailPageComments id={id}/>
-          </Page>
-      </DynamicModuleLoader>
+    return (
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+            <Page
+                data-testid={'ArticleDetailPage'}
+                className={classNames(cls.ArticleDetailPage, {}, [className])}>
+                <ArticleDetailPageHeader />
+                <ArticleDetails id={id} />
+                <ArticleRating articleId={id} />
+                <ArticleRecommendationList />
+                <ArticleDetailPageComments id={id} />
+            </Page>
+        </DynamicModuleLoader>
+    );
+};
 
-  )
-}
-
-export default memo(ArticleDetailPage)
+export default memo(ArticleDetailPage);

@@ -1,14 +1,10 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next';
 
-import { Page } from '@/widgets/Page'
+import { Page } from '@/widgets/Page';
 
 const ForbiddenPage = () => {
-  const { t } = useTranslation()
-  return (
-        <Page data-testid={'ForbiddenPage'}>
-             {t('У вас нет доступа')}
-        </Page>
-  )
-}
+    const { t } = useTranslation();
+    return <Page data-testid={'ForbiddenPage'}>{t('У вас нет доступа')}</Page>;
+};
 
-export default ForbiddenPage
+export default ForbiddenPage;

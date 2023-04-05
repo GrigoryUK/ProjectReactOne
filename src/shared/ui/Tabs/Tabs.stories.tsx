@@ -1,40 +1,40 @@
-import { action } from '@storybook/addon-actions'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import React from 'react'
+import { action } from '@storybook/addon-actions';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
 
-import { Tabs } from './Tabs'
+import { Tabs } from './Tabs';
 
 export default {
-  title: 'shared/Tabs',
-  component: Tabs,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof Tabs>
+    title: 'shared/Tabs',
+    component: Tabs,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof Tabs>;
 
-const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />
+const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
 
-export const Primary = Template.bind({})
+export const Primary = Template.bind({});
 
 Primary.args = {
-  tabs: [
-    {
-      value: 'tab 1',
-      content: 'tab 1'
-    },
-    {
-      value: 'tab 2',
-      content: 'tab 2'
-    },
-    {
-      value: 'tab 3',
-      content: 'tab 3'
-    },
-    {
-      value: 'tab 4',
-      content: 'tab 4'
-    }
-  ],
-  value: 'tab 2',
-  onTabClick: action('onTabClick')
-}
+    tabs: [
+        {
+            value: 'tab 1',
+            content: 'tab 1',
+        },
+        {
+            value: 'tab 2',
+            content: 'tab 2',
+        },
+        {
+            value: 'tab 3',
+            content: 'tab 3',
+        },
+        {
+            value: 'tab 4',
+            content: 'tab 4',
+        },
+    ],
+    value: 'tab 2',
+    onTabClick: action('onTabClick'),
+};

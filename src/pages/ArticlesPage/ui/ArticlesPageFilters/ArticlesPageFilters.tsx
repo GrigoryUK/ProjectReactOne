@@ -1,83 +1,92 @@
-import { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 
 import {
-  getArticlesPageOrder,
-  getArticlesPageSearch,
-  getArticlesPageSort,
-  getArticlesPageType,
-  getArticlesPageView
-} from '../../model/selectors/articlesPageSelectors'
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
-import { articlesPageActions } from '../../model/slices/articlesPageSlice'
+    getArticlesPageOrder,
+    getArticlesPageSearch,
+    getArticlesPageSort,
+    getArticlesPageType,
+    getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 
-import cls from './ArticlesPageFilters.module.scss'
+import cls from './ArticlesPageFilters.module.scss';
 
-import {
-  ArticleSortField,
-  ArticleType,
-  ArticleView
-} from '@/entities/Article'
-import { ArticleSortSelector } from '@/features/ArticleSortSelector'
-import { ArticleTypeTabs } from '@/features/ArticleTypeTabs'
-import { ArticleViewSelector } from '@/features/ArticleViewSelector'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
-import { SortOrder } from '@/shared/types/sort'
-import { Input } from '@/shared/ui/Input'
+import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { SortOrder } from '@/shared/types/sort';
+import { Input } from '@/shared/ui/Input';
 
 interface ArticlesPageFiltersProps {
     className?: string;
 }
 
 export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
-  const {
-    className
-  } = props
-  const dispatch = useAppDispatch()
-  const { t } = useTranslation()
-  const view = useSelector(getArticlesPageView)
-  const sort = useSelector(getArticlesPageSort)
-  const order = useSelector(getArticlesPageOrder)
-  const search = useSelector(getArticlesPageSearch)
-  const type = useSelector(getArticlesPageType)
+    const { className } = props;
+    const dispatch = useAppDispatch();
+    const { t } = useTranslation();
+    const view = useSelector(getArticlesPageView);
+    const sort = useSelector(getArticlesPageSort);
+    const order = useSelector(getArticlesPageOrder);
+    const search = useSelector(getArticlesPageSearch);
+    const type = useSelector(getArticlesPageType);
 
-  const fetchData = useCallback(() => {
-    dispatch(fetchArticlesList({ replace: true }))
-  }, [dispatch])
+    const fetchData = useCallback(() => {
+        dispatch(fetchArticlesList({ replace: true }));
+    }, [dispatch]);
 
-  const debouncedFetchData = useDebounce(fetchData, 500)
-  const onViewChange = useCallback((view: ArticleView) => {
-    dispatch(articlesPageActions.setView(view))
-  }, [dispatch])
+    const debouncedFetchData = useDebounce(fetchData, 500);
+    const onViewChange = useCallback(
+        (view: ArticleView) => {
+            dispatch(articlesPageActions.setView(view));
+        },
+        [dispatch],
+    );
 
-  const onSortChange = useCallback((newSort: ArticleSortField) => {
-    dispatch(articlesPageActions.setSort(newSort))
-    dispatch(articlesPageActions.setPage(1))
-    fetchData()
-  }, [dispatch, fetchData])
+    const onSortChange = useCallback(
+        (newSort: ArticleSortField) => {
+            dispatch(articlesPageActions.setSort(newSort));
+            dispatch(articlesPageActions.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
-  const onOrderChange = useCallback((newOrder: SortOrder) => {
-    dispatch(articlesPageActions.setOrder(newOrder))
-    dispatch(articlesPageActions.setPage(1))
-    fetchData()
-  }, [dispatch, fetchData])
+    const onOrderChange = useCallback(
+        (newOrder: SortOrder) => {
+            dispatch(articlesPageActions.setOrder(newOrder));
+            dispatch(articlesPageActions.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
-  const onSearchChange = useCallback((newSearch: string) => {
-    dispatch(articlesPageActions.setSearch(newSearch))
-    dispatch(articlesPageActions.setPage(1))
-    debouncedFetchData()
-  }, [dispatch, debouncedFetchData])
+    const onSearchChange = useCallback(
+        (newSearch: string) => {
+            dispatch(articlesPageActions.setSearch(newSearch));
+            dispatch(articlesPageActions.setPage(1));
+            debouncedFetchData();
+        },
+        [dispatch, debouncedFetchData],
+    );
 
-  const onTypeChange = useCallback((value: ArticleType) => {
-    dispatch(articlesPageActions.setType(value))
-    dispatch(articlesPageActions.setPage(1))
-    fetchData()
-  }, [dispatch, fetchData])
+    const onTypeChange = useCallback(
+        (value: ArticleType) => {
+            dispatch(articlesPageActions.setType(value));
+            dispatch(articlesPageActions.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
-  return (
+    return (
         <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
             <div className={cls.row}>
                 <ArticleSortSelector
@@ -86,7 +95,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
                     onChangeSort={onSortChange}
                     onChangeOrder={onOrderChange}
                 />
-                <ArticleViewSelector view={view} onViewClick={onViewChange}/>
+                <ArticleViewSelector view={view} onViewClick={onViewChange} />
             </div>
             <Input
                 onChange={onSearchChange}
@@ -96,9 +105,9 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
             />
             <ArticleTypeTabs
                 className={cls.tabs}
-                  value={type}
-                  onChangeType={onTypeChange}
+                value={type}
+                onChangeType={onTypeChange}
             />
         </div>
-  )
-})
+    );
+});

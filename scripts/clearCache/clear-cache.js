@@ -1,1 +1,1 @@
-console.log('CLEAR CACHE')
+console.log("CLEAR CACHE");

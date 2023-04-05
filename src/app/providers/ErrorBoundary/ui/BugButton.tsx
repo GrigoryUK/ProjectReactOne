@@ -1,31 +1,25 @@
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-
-import { Button } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/Button';
 
 interface BugButtonProps {
-  className?: string
+    className?: string;
 }
 // кнопка ошибки (тестовая кнопка ее нет в проекте)
 export const BugButton = ({ className }: BugButtonProps) => {
-  const [error, setError] = useState(false)
+    const [error, setError] = useState(false);
 
-  const onThrow = () => setError(true)
+    const onThrow = () => setError(true);
 
-  useEffect(() => {
-    if (error) {
-      throw new Error()
-    }
-  }, [error])
+    useEffect(() => {
+        if (error) {
+            throw new Error();
+        }
+    }, [error]);
 
-  const { t } = useTranslation()
-  return (
-        <Button onClick={onThrow}
-                >
-            {t('Throw an error')}
-        </Button>
-  )
-}
+    const { t } = useTranslation();
+    return <Button onClick={onThrow}>{t('Throw an error')}</Button>;
+};
 
-export default BugButton
+export default BugButton;

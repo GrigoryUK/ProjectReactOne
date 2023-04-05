@@ -1,22 +1,22 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { Profile } from '../../model/types/profile'
+import { Profile } from '../../model/types/profile';
 
-import cls from './ProfileCard.module.scss'
+import cls from './ProfileCard.module.scss';
 
-import { CountrySelect, Country } from '@/entities/Country'
-import { CurrencySelect, Currency } from '@/entities/Currency'
-import { classNames, Mods } from '@/shared/lib/classNames/classNames'
-import { Avatar } from '@/shared/ui/Avatar'
-import { Input, InputTheme } from '@/shared/ui/Input'
-import { Loader } from '@/shared/ui/Loader'
-import { Text, TextTheme } from '@/shared/ui/Text'
+import { CountrySelect, Country } from '@/entities/Country';
+import { CurrencySelect, Currency } from '@/entities/Currency';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Input, InputTheme } from '@/shared/ui/Input';
+import { Loader } from '@/shared/ui/Loader';
+import { Text, TextTheme } from '@/shared/ui/Text';
 
 interface ProfileCardProps {
     className?: string;
-    data?: Profile
-    error?: string
+    data?: Profile;
+    error?: string;
     readonly?: boolean;
     isLoading?: boolean;
     onChangeLastname?: (value?: string) => void;
@@ -27,63 +27,76 @@ interface ProfileCardProps {
     onChangeUsername?: (value?: string) => void;
     onChangeCurrency?: (currency?: Currency) => void;
     onChangeCountry?: (country: Country) => void;
-
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
-  const {
-    className,
-    data,
-    isLoading,
-    error,
-    onChangeLastname,
-    onChangeFirstname,
-    readonly,
-    onChangeCity,
-    onChangeUsername,
-    onChangeAvatar,
-    onChangeAge,
-    onChangeCurrency,
-    onChangeCountry
+    const {
+        className,
+        data,
+        isLoading,
+        error,
+        onChangeLastname,
+        onChangeFirstname,
+        readonly,
+        onChangeCity,
+        onChangeUsername,
+        onChangeAvatar,
+        onChangeAge,
+        onChangeCurrency,
+        onChangeCountry,
+    } = props;
+    const { t } = useTranslation('profile');
 
-  } = props
-  const { t } = useTranslation('profile')
+    const mods: Mods = {
+        [cls.editing]: !readonly,
+    };
 
-  const mods: Mods = {
-    [cls.editing]: !readonly
-  }
-
-  if (isLoading) {
-    return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
-                <Loader/>
+    if (isLoading) {
+        return (
+            <div
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.loading,
+                ])}>
+                <Loader />
             </div>
-    )
-  }
+        );
+    }
 
-  if (error) {
-    return (
-          <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+    if (error) {
+        return (
+            <div
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}>
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при загрузке профиля')}
-                    text={t('Попробуйте обновить страницу')}/>
-          </div>
-    )
-  }
-  return (
+                    text={t('Попробуйте обновить страницу')}
+                />
+            </div>
+        );
+    }
+    return (
         <div className={classNames(cls.ProfileCard, mods, [className])}>
-            {data?.avatar &&
+            {data?.avatar && (
                 <div className={cls.avatar}>
                     <div className={cls.avatar__text}>
-                        <Text text={t('Аватар')}/>
+                        <Text text={t('Аватар')} />
                     </div>
-                    <Avatar size={100} className={cls.avatar__icon} src={data?.avatar} alt=""/></div>
-            }
+                    <Avatar
+                        size={100}
+                        className={cls.avatar__icon}
+                        src={data?.avatar}
+                        alt=""
+                    />
+                </div>
+            )}
             <div className={cls.info}>
                 <div className={cls.row}>
                     <div className={cls.subtitle}>
-                        <Text text={t('Имя')}/>
+                        <Text text={t('Имя')} />
                     </div>
                     <div className={cls.input}>
                         <Input
@@ -94,16 +107,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
                             data-testid={'ProfileCard.firstname'}
                         />
                     </div>
-
                 </div>
                 <div className={cls.row}>
                     <div className={cls.subtitle}>
-                        <Text text={t('Фамилия')}/>
+                        <Text text={t('Фамилия')} />
                     </div>
                     <div className={cls.input}>
                         <Input
                             theme={InputTheme.PRIMARY}
-
                             value={data?.lastname}
                             onChange={onChangeLastname}
                             readonly={readonly}
@@ -113,7 +124,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 </div>
                 <div className={cls.row}>
                     <div className={cls.subtitle}>
-                        <Text text={t('Возраст')}/>
+                        <Text text={t('Возраст')} />
                     </div>
                     <div className={cls.input}>
                         <Input
@@ -123,13 +134,12 @@ export const ProfileCard = (props: ProfileCardProps) => {
                             type={'number'}
                             onChange={onChangeAge}
                             readonly={readonly}
-
                         />
                     </div>
                 </div>
                 <div className={cls.row}>
                     <div className={cls.subtitle}>
-                        <Text text={t('Город')}/>
+                        <Text text={t('Город')} />
                     </div>
                     <div className={cls.input}>
                         <Input
@@ -142,7 +152,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 </div>
                 <div className={cls.row}>
                     <div className={cls.subtitle}>
-                        <Text text={t('Логин')}/>
+                        <Text text={t('Логин')} />
                     </div>
                     <div className={cls.input}>
                         <Input
@@ -155,7 +165,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 </div>
                 <div className={cls.row}>
                     <div className={cls.subtitle}>
-                        <Text text={t('Ссылка на аватар')}/>
+                        <Text text={t('Ссылка на аватар')} />
                     </div>
                     <div className={cls.input}>
                         <Input
@@ -172,7 +182,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
                             value={data?.currency}
                             onChange={onChangeCurrency}
                             readonly={readonly}
-
                         />
                     </div>
                     <div className={cls.select}>
@@ -180,12 +189,10 @@ export const ProfileCard = (props: ProfileCardProps) => {
                             value={data?.country}
                             onChange={onChangeCountry}
                             readonly={readonly}
-
                         />
                     </div>
-
                 </div>
             </div>
         </div>
-  )
-}
+    );
+};

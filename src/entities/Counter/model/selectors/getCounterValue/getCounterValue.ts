@@ -1,4 +1,5 @@
+import { buildSelector } from '@/shared/store';
 
-import { buildSelector } from '@/shared/store'
-
-export const [useCounterValue, getCounterValue] = buildSelector((state) => state.counter.value)
+export const [useCounterValue, getCounterValue] = buildSelector(
+    (state) => state.counter.value,
+);

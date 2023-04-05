@@ -1,22 +1,29 @@
-import React, { InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react'
+import React, {
+    InputHTMLAttributes,
+    memo,
+    useEffect,
+    useRef,
+    useState,
+} from 'react';
 
-import cls from './Input.module.scss'
+import cls from './Input.module.scss';
 
-import { classNames, Mods } from '@/shared/lib/classNames/classNames'
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
-type HtmlInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'theme' | 'size' | 'readOnly'>
+type HtmlInputProps = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange' | 'theme' | 'size' | 'readOnly'
+>;
 
 export enum InputTheme {
-
     CLEAR = 'clear',
     PRIMARY = 'primary',
-
 }
 
 export enum InputSize {
     M = 'size_m',
     L = 'size_l',
-    X = 'size_x'
+    X = 'size_x',
 }
 
 interface InputProps extends HtmlInputProps {
@@ -27,52 +34,55 @@ interface InputProps extends HtmlInputProps {
     size?: InputSize;
     autofocus?: boolean;
     readonly?: boolean;
-
 }
 
 export const Input = memo((props: InputProps) => {
-  const {
-    className,
-    value,
-    onChange,
-    type = 'text',
-    placeholder,
-    theme = InputTheme.PRIMARY,
-    size = InputSize.M,
-    readonly,
-    autofocus,
-    ...otherProps
-  } = props
+    const {
+        className,
+        value,
+        onChange,
+        type = 'text',
+        placeholder,
+        theme = InputTheme.PRIMARY,
+        size = InputSize.M,
+        readonly,
+        autofocus,
+        ...otherProps
+    } = props;
 
-  const ref = useRef<HTMLInputElement>(null)
-  const [isFocused, setIsFocused] = useState(false)
+    const ref = useRef<HTMLInputElement>(null);
+    const [isFocused, setIsFocused] = useState(false);
 
-  useEffect(() => {
-    if (autofocus) {
-      setIsFocused(true)
-      ref.current?.focus()
-    }
-  }, [autofocus])
+    useEffect(() => {
+        if (autofocus) {
+            setIsFocused(true);
+            ref.current?.focus();
+        }
+    }, [autofocus]);
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange?.(e.target.value)
-  }
+    const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+        onChange?.(e.target.value);
+    };
 
-  const onFocusHandler = () => {
-    setIsFocused(true)
-  }
+    const onFocusHandler = () => {
+        setIsFocused(true);
+    };
 
-  const onBlurHandler = () => {
-    setIsFocused(false)
-  }
+    const onBlurHandler = () => {
+        setIsFocused(false);
+    };
 
-  const mods: Mods = {
-    [cls.readonly]: readonly
-  }
+    const mods: Mods = {
+        [cls.readonly]: readonly,
+    };
 
-  return (
+    return (
         <input
-            className={classNames(cls.Input, mods, [className, cls[theme], cls[size]])}
+            className={classNames(cls.Input, mods, [
+                className,
+                cls[theme],
+                cls[size],
+            ])}
             type={type}
             value={value}
             placeholder={placeholder}
@@ -82,7 +92,6 @@ export const Input = memo((props: InputProps) => {
             autoFocus={autofocus}
             readOnly={readonly}
             {...otherProps}
-            />
-
-  )
-})
+        />
+    );
+});

@@ -1,36 +1,34 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "ESNext",
-    "target": "es5",
-    "jsx": "react-jsx",
-    "allowJs": true,
-    "strict": true,
-    "moduleResolution": "node",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "isolatedModules": true,
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "ESNext",
+        "target": "es5",
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "strict": true,
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "isolatedModules": true
     },
     "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
     },
-  "include": [
-    ".config/jest/setupTests.ts",
-    "./.eslintrc.js",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "**/*.tsx",
-    "**/*.ts",
-    "**/*.js",
-  ],
-  "exclude": [
-    "cypress.config.ts"
-  ]
+    "include": [
+        ".config/jest/setupTests.ts",
+        "./.eslintrc.js",
+        "./src/**/*.ts",
+        "./src/**/*.tsx",
+        "**/*.tsx",
+        "**/*.ts",
+        "**/*.js"
+    ],
+    "exclude": ["cypress.config.ts"]
 }

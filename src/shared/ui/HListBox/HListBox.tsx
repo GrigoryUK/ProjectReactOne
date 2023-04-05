@@ -1,11 +1,11 @@
-import { Listbox, Transition } from '@headlessui/react'
-import { Fragment, memo, ReactNode } from 'react'
+import { Listbox, Transition } from '@headlessui/react';
+import { Fragment, memo, ReactNode } from 'react';
 
-import { HStack } from '../Stack'
+import { HStack } from '../Stack';
 
-import cls from './HListBox.module.scss'
+import cls from './HListBox.module.scss';
 
-import { classNames } from '@/shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 export interface HListBoxItem {
     value: string;
@@ -26,35 +26,36 @@ interface HListBoxProps {
 }
 
 const mapDirectionClass: Record<DropdownDirection, string> = {
-  bottom: cls.optionsBottom,
-  top: cls.optionsTop
-}
+    bottom: cls.optionsBottom,
+    top: cls.optionsTop,
+};
 
 export const HListBox = memo((props: HListBoxProps) => {
-  const {
-    className,
-    items,
-    value,
-    defaultValue,
-    onChange,
-    readonly,
-    direction = 'bottom',
-    label
-  } = props
+    const {
+        className,
+        items,
+        value,
+        defaultValue,
+        onChange,
+        readonly,
+        direction = 'bottom',
+        label,
+    } = props;
 
-  const optionsClasses = [mapDirectionClass[direction]]
-  return (
+    const optionsClasses = [mapDirectionClass[direction]];
+    return (
         <HStack gap={'8'}>
-             {label && <span>{`${label}`}</span>}
+            {label && <span>{`${label}`}</span>}
             <Listbox
                 disabled={readonly}
                 as={'div'}
-                     className={classNames(cls.HListBox, {}, [className])}
-                     value={value}
-                     onChange={onChange}
-            >
-                <Listbox.Button disabled={readonly} className={classNames(cls.selected, {}, [className])}>
-                        {value ?? defaultValue}
+                className={classNames(cls.HListBox, {}, [className])}
+                value={value}
+                onChange={onChange}>
+                <Listbox.Button
+                    disabled={readonly}
+                    className={classNames(cls.selected, {}, [className])}>
+                    {value ?? defaultValue}
                 </Listbox.Button>
                 <Transition
                     enter="transition duration-100 ease-out"
@@ -62,31 +63,30 @@ export const HListBox = memo((props: HListBoxProps) => {
                     enterTo="transform scale-100 opacity-100"
                     leave="transition duration-75 ease-out"
                     leaveFrom="transform scale-100 opacity-100"
-                    leaveTo="transform scale-95 opacity-0"
-                >
-                    <Listbox.Options className={classNames(cls.options, {}, optionsClasses)}>
+                    leaveTo="transform scale-95 opacity-0">
+                    <Listbox.Options
+                        className={classNames(cls.options, {}, optionsClasses)}>
                         {items?.map((item) => (
                             <Listbox.Option
                                 key={item.value}
                                 value={item.value}
                                 as={Fragment}
-                                disabled={item.disabled}
-                            >
+                                disabled={item.disabled}>
                                 {({ active, selected }) => (
-                                    <li className={classNames(cls.item,
-                                      { [cls.active]: active, [cls.disabled]: item.disabled })}
-                                    >
+                                    <li
+                                        className={classNames(cls.item, {
+                                            [cls.active]: active,
+                                            [cls.disabled]: item.disabled,
+                                        })}>
                                         {item.content}
                                         {selected && '+'}
                                     </li>
                                 )}
                             </Listbox.Option>
                         ))}
-
                     </Listbox.Options>
                 </Transition>
             </Listbox>
         </HStack>
-
-  )
-})
+    );
+});

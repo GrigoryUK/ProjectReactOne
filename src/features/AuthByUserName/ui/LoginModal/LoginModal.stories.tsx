@@ -1,41 +1,49 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import React from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
 
-import { LoginModal } from './LoginModal'
+import { LoginModal } from './LoginModal';
 
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
-  title: 'features/LoginModal',
-  component: LoginModal,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof LoginModal>
+    title: 'features/LoginModal',
+    component: LoginModal,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof LoginModal>;
 
-const Template: ComponentStory<typeof LoginModal> = (args) => <LoginModal {...args} />
+const Template: ComponentStory<typeof LoginModal> = (args) => (
+    <LoginModal {...args} />
+);
 
-export const Primary = Template.bind({})
+export const Primary = Template.bind({});
 
 Primary.args = {
-  isOpen: true
-}
-Primary.decorators = [StoreDecorator({
-  loginForm: { username: '123', password: '123' }
-})]
+    isOpen: true,
+};
+Primary.decorators = [
+    StoreDecorator({
+        loginForm: { username: '123', password: '123' },
+    }),
+];
 
-export const Error = Template.bind({})
+export const Error = Template.bind({});
 Error.args = {
-  isOpen: true
-}
-Error.decorators = [StoreDecorator({
-  loginForm: { username: '123', password: '123', error: 'Error' }
-})]
+    isOpen: true,
+};
+Error.decorators = [
+    StoreDecorator({
+        loginForm: { username: '123', password: '123', error: 'Error' },
+    }),
+];
 
-export const Loading = Template.bind({})
+export const Loading = Template.bind({});
 Loading.args = {
-  isOpen: true
-}
-Loading.decorators = [StoreDecorator({
-  loginForm: { isLoading: true }
-})]
+    isOpen: true,
+};
+Loading.decorators = [
+    StoreDecorator({
+        loginForm: { isLoading: true },
+    }),
+];

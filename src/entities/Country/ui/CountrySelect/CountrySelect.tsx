@@ -1,9 +1,9 @@
-import React, { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
+import React, { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { Country } from '../../model/types/country'
+import { Country } from '../../model/types/country';
 
-import { HListBox } from '@/shared/ui/HListBox'
+import { HListBox } from '@/shared/ui/HListBox';
 
 interface CountrySelectProps {
     value?: Country;
@@ -11,19 +11,22 @@ interface CountrySelectProps {
     readonly?: boolean;
 }
 const options = [
-  { value: Country.Russia, content: Country.Russia },
-  { value: Country.Armenia, content: Country.Armenia },
-  { value: Country.Belarus, content: Country.Belarus }
-]
+    { value: Country.Russia, content: Country.Russia },
+    { value: Country.Armenia, content: Country.Armenia },
+    { value: Country.Belarus, content: Country.Belarus },
+];
 export const CountrySelect = memo((props: CountrySelectProps) => {
-  const { t } = useTranslation()
-  const { value, onChange, readonly } = props
+    const { t } = useTranslation();
+    const { value, onChange, readonly } = props;
 
-  const onChangeHandler = useCallback((value: string) => {
-    onChange?.(value as Country)
-  }, [onChange])
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            onChange?.(value as Country);
+        },
+        [onChange],
+    );
 
-  return (
+    return (
         <HListBox
             onChange={onChangeHandler}
             value={value}
@@ -33,6 +36,5 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
             readonly={readonly}
             direction="top"
         />
-
-  )
-})
+    );
+});

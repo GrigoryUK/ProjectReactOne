@@ -1,86 +1,86 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import React from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
 
-import { Button, ButtonSize, ButtonTheme } from './Button'
+import { Button, ButtonSize, ButtonTheme } from './Button';
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 export default {
-  title: 'shared/Button',
-  component: Button,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof Button>
+    title: 'shared/Button',
+    component: Button,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({})
+export const Primary = Template.bind({});
 
 Primary.args = {
-  children: 'Text'
-}
+    children: 'Text',
+};
 
-export const Clear = Template.bind({})
+export const Clear = Template.bind({});
 Clear.args = {
-  children: 'Text',
-  theme: ButtonTheme.CLEAR
-}
+    children: 'Text',
+    theme: ButtonTheme.CLEAR,
+};
 
-export const Outlined = Template.bind({})
+export const Outlined = Template.bind({});
 Outlined.args = {
-  children: 'Text',
-  theme: ButtonTheme.OUTLINE
-}
+    children: 'Text',
+    theme: ButtonTheme.OUTLINE,
+};
 
-Outlined.decorators = [ThemeDecorator(Theme.LIGHT)]
+Outlined.decorators = [ThemeDecorator(Theme.LIGHT)];
 
-export const OutlinedDark = Template.bind({})
+export const OutlinedDark = Template.bind({});
 OutlinedDark.args = {
-  children: 'Text',
-  theme: ButtonTheme.OUTLINE
-}
-OutlinedDark.decorators = [ThemeDecorator(Theme.DARK)]
+    children: 'Text',
+    theme: ButtonTheme.OUTLINE,
+};
+OutlinedDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const Collapse = Template.bind({})
+export const Collapse = Template.bind({});
 Collapse.args = {
-  children: '>',
-  theme: ButtonTheme.COLLAPSE
-}
-Collapse.decorators = [ThemeDecorator(Theme.LIGHT)]
-export const CollapseDark = Template.bind({})
+    children: '>',
+    theme: ButtonTheme.COLLAPSE,
+};
+Collapse.decorators = [ThemeDecorator(Theme.LIGHT)];
+export const CollapseDark = Template.bind({});
 CollapseDark.args = {
-  children: '>',
-  theme: ButtonTheme.COLLAPSE
-}
-CollapseDark.decorators = [ThemeDecorator(Theme.DARK)]
+    children: '>',
+    theme: ButtonTheme.COLLAPSE,
+};
+CollapseDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const OutlinedSizeM = Template.bind({})
+export const OutlinedSizeM = Template.bind({});
 OutlinedSizeM.args = {
-  children: 'Text',
-  theme: ButtonTheme.OUTLINE,
-  size: ButtonSize.M
-}
+    children: 'Text',
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.M,
+};
 
-export const OutlinedSizeL = Template.bind({})
+export const OutlinedSizeL = Template.bind({});
 OutlinedSizeL.args = {
-  children: 'Text',
-  theme: ButtonTheme.OUTLINE,
-  size: ButtonSize.L
-}
+    children: 'Text',
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.L,
+};
 
-export const OutlinedSizeX = Template.bind({})
+export const OutlinedSizeX = Template.bind({});
 OutlinedSizeX.args = {
-  children: 'Text',
-  theme: ButtonTheme.OUTLINE,
-  size: ButtonSize.X
-}
+    children: 'Text',
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.X,
+};
 
-export const Disabled = Template.bind({})
+export const Disabled = Template.bind({});
 Disabled.args = {
-  children: 'Text',
-  theme: ButtonTheme.OUTLINE,
-  size: ButtonSize.M,
-  disabled: true
-}
+    children: 'Text',
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.M,
+    disabled: true,
+};

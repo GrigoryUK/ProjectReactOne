@@ -1,21 +1,20 @@
 export enum ArticleType {
-
     ALL = 'ALL',
     IT = 'IT',
     SCIENCE = 'SCIENCE',
     ECONOMICS = 'ECONOMICS',
-    BOOKS = 'BOOKS'
+    BOOKS = 'BOOKS',
 }
 
 export enum ArticleView {
     LIST = 'LIST',
-    GRID = 'GRID'
+    GRID = 'GRID',
 }
 
 export enum ArticleSortField {
     VIEW = 'views',
     TITLE = 'title',
-    CREATED = 'createdAt'
+    CREATED = 'createdAt',
 }
 
 export enum ArticleBlockType {

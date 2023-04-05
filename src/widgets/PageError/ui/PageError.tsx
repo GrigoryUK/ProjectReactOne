@@ -1,29 +1,29 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next';
 
-import cls from './PageError.module.scss'
+import cls from './PageError.module.scss';
 
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { Button, ButtonTheme } from '@/shared/ui/Button'
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 
 interface PageErrorProps {
-  className?: string
+    className?: string;
 }
 
 export const PageError = ({ className }: PageErrorProps) => {
-  const { t } = useTranslation()
+    const { t } = useTranslation();
 
-  const reloadPage = () => {
-    location.reload()
-  }
+    const reloadPage = () => {
+        location.reload();
+    };
 
-  return (
+    return (
         <div className={classNames(cls.PageError, {}, [className])}>
             <h1>{t('Oops, something went wrong')}</h1>
             <Button theme={ButtonTheme.CLEAR} onClick={reloadPage}>
                 {t('Reload page')}
             </Button>
         </div>
-  )
-}
+    );
+};
 
-export default PageError
+export default PageError;

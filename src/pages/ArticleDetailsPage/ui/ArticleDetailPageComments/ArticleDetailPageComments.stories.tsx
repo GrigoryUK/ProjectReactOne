@@ -1,18 +1,20 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import React from 'react'
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
 
-import { ArticleDetailPageComments } from './ArticleDetailPageComments'
+import { ArticleDetailPageComments } from './ArticleDetailPageComments';
 
 export default {
-  title: 'pages/ArticleDetailsPage/ArticleDetailPageComments',
-  component: ArticleDetailPageComments,
-  argTypes: {
-    backgroundColor: { control: 'color' }
-  }
-} as ComponentMeta<typeof ArticleDetailPageComments>
+    title: 'pages/ArticleDetailsPage/ArticleDetailPageComments',
+    component: ArticleDetailPageComments,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof ArticleDetailPageComments>;
 
-const Template: ComponentStory<typeof ArticleDetailPageComments> = (args) => <ArticleDetailPageComments {...args} />
+const Template: ComponentStory<typeof ArticleDetailPageComments> = (args) => (
+    <ArticleDetailPageComments {...args} />
+);
 
-export const Primary = Template.bind({})
+export const Primary = Template.bind({});
 
-Primary.args = {}
+Primary.args = {};
